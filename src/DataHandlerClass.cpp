@@ -565,7 +565,7 @@ void *DataUARTHandler::sortIncomingData( void )
                     radarscan.z = mmwData.objOut_cartes.z;
                     radarscan.velocity = mmwData.objOut_cartes.velocity;
 
-                    radarscan.range = sqrt(mmwData.objOut_cartes.y*mmwData.objOut_cartes.y +
+                    radarscan.range  =  sqrt(mmwData.objOut_cartes.y*mmwData.objOut_cartes.y +
                         mmwData.objOut_cartes.x*mmwData.objOut_cartes.x + mmwData.objOut_cartes.z*mmwData.objOut_cartes.z);
                     radarscan.doppler_bin = (uint16_t)(
                         mmwData.detList.dopplerIdx + nd / 2);
