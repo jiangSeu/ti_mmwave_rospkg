@@ -553,8 +553,8 @@ void *DataUARTHandler::sortIncomingData( void )
                     RScan->points[i].z = mmwData.objOut_cartes.z;
 
                     RScan->points[i].velocity = mmwData.objOut_cartes.velocity;
-                    RScan->points[i].range = sqrt(radarscan.x*radarscan.x +
-                        radarscan.y*radarscan.y + radarscan.z*radarscan.z);
+                    RScan->points[i].range = sqrt(mmwData.objOut_cartes.y*mmwData.objOut_cartes.y +
+                        mmwData.objOut_cartes.x*mmwData.objOut_cartes.x + mmwData.objOut_cartes.z*mmwData.objOut_cartes.z);
 
                     radarscan.header.frame_id = frameID;
                     radarscan.header.stamp = ros::Time::now();
@@ -565,8 +565,8 @@ void *DataUARTHandler::sortIncomingData( void )
                     radarscan.z = mmwData.objOut_cartes.z;
                     radarscan.velocity = mmwData.objOut_cartes.velocity;
 
-                    radarscan.range = sqrt(radarscan.x*radarscan.x +
-                            radarscan.y*radarscan.y + radarscan.z*radarscan.z);
+                    radarscan.range = sqrt(mmwData.objOut_cartes.y*mmwData.objOut_cartes.y +
+                        mmwData.objOut_cartes.x*mmwData.objOut_cartes.x + mmwData.objOut_cartes.z*mmwData.objOut_cartes.z);
                     radarscan.doppler_bin = (uint16_t)(
                         mmwData.detList.dopplerIdx + nd / 2);
                     radarscan.bearing = std::atan2(-mmwData.objOut_cartes.x,
